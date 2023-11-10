@@ -1,3 +1,4 @@
+#配置在nacos的配置中心中的内容
 server:
   port: 9001
   servlet:
