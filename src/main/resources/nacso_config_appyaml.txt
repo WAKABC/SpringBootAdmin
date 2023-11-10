@@ -1,4 +1,4 @@
-#配置在nacos的配置中心中的内容
+#配置在nacos的配置中心中的内容,该版本时dev版本
 server:
   port: 9001
   servlet:
