@@ -1,9 +1,10 @@
 package com.wak.config;
 
 import de.codecentric.boot.admin.server.config.AdminServerProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
  * @Version 1.0
  */
 @Configuration
-public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
+public class SecuritySecureConfig {
 
     private final String adminContextPath;
 
@@ -21,9 +22,8 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
         this.adminContextPath = adminServerProperties.getContextPath();
     }
 
-
-    @Override
-    public void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
         successHandler.setTargetUrlParameter("redirectTo");
         successHandler.setDefaultTargetUrl(adminContextPath + "/");
@@ -40,5 +40,6 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
                 .logout().logoutUrl(adminContextPath + "/logout")
                 .and()
                 .csrf().disable();
+        return http.build();
     }
 }
