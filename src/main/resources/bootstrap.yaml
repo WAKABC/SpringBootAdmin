@@ -2,9 +2,15 @@ spring:
   application:
     name: springboot-admin-nacos-server
   cloud:
+    compatibility-verifier:
+      enabled: false
     nacos:
       discovery:
+        group: tcc
+        namespace: 604635fc-53c7-421e-a82c-4d1c4f838347
         server-addr: 192.168.118.103:8848
       config:
+        group: tcc
+        namespace: 604635fc-53c7-421e-a82c-4d1c4f838347
         server-addr: 192.168.118.103:8848
         file-extension: yaml

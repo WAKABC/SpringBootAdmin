@@ -2,11 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.wak</groupId>
-        <artifactId>besteffortnotification</artifactId>
-        <version>1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.17</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <groupId>com.wak</groupId>
     <artifactId>AppAdmin</artifactId>
     <packaging>jar</packaging>
 
@@ -25,22 +27,27 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>2.7.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!--spring-cloud-starter-alibaba-nacos-discovery版本2021.1版本可以和springbootAdmin兼容-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2021.1</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2021.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>3.1.5</version>
         </dependency>
     </dependencies>
 </project>
