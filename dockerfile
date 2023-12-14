@@ -4,6 +4,8 @@ FROM adoptopenjdk/openjdk8
 
 USER root
 
+RUN apt-get update && apt-get install -y nohup
+
 ARG APP_JAR
 
 WORKDIR /home/app/
