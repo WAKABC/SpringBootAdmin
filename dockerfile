@@ -18,7 +18,9 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe m
     && echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse" >> /etc/apt/sources.list
 
 # 更新软件包列表
-RUN apt update && apt-get install -y nohup
+RUN apt update
+
+RUN apt-get install -y nohup
 
 ARG APP_JAR
 
