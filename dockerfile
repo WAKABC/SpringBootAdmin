@@ -20,8 +20,6 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe m
 # 更新软件包列表
 RUN apt update
 
-RUN apt-get install -y nohup
-
 ARG APP_JAR
 
 WORKDIR /home/app/
