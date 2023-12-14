@@ -10,7 +10,7 @@ WORKDIR /home/app/
 
 COPY $APP_JAR AppAdmin.jar
 
-RUN mkdir /var/log/admin
+RUN mkdir -p /var/log/admin
 
 EXPOSE 9999
 
