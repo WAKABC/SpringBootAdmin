@@ -24,10 +24,10 @@ ARG APP_JAR
 
 WORKDIR /home/app/
 
-RUN mkdir -p /var/log/admin/ && touch /var/log/admin/admin.log
+#RUN mkdir -p /var/log/admin/ && touch /var/log/admin/admin.log
 
 COPY $APP_JAR AppAdmin.jar
 
 EXPOSE 9999
 
-CMD ["nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &"]
+CMD ["nohup java -jar AppAdmin.jar > admin.log 2>&1 &"]
