@@ -2,15 +2,13 @@ FROM adoptopenjdk/openjdk8
 
 USER root
 
-ARG APP_JAR
+#ARG APP_JAR
 
 WORKDIR /home/app/
 
 RUN mkdir -p /var/log/admin/
 
-RUN echo `ls -al /var/jenkins_home/workspace/spring-boot-admin/target/`
-
-COPY $APP_JAR /home/app/
+COPY /var/jenkins_home/workspace/spring-boot-admin/target/AppAdmin-2.7.17.jar /home/app/
 
 EXPOSE 9999
 
