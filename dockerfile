@@ -8,7 +8,7 @@ WORKDIR /home/app/
 
 RUN mkdir -p /var/log/admin/
 
-RUN ls -al /var/jenkins_home/workspace/spring-boot-admin/target/
+RUN echo `ls -al /var/jenkins_home/workspace/spring-boot-admin/target/`
 
 COPY $APP_JAR /home/app/
 
