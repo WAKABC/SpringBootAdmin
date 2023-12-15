@@ -30,4 +30,4 @@ COPY $APP_JAR AppAdmin.jar
 
 EXPOSE 9999
 
-CMD ["nohup java -jar AppAdmin.jar 2>&1 > /var/log/admin/admin.log &"]
+CMD ["nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &"]
