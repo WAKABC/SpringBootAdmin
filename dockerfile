@@ -24,7 +24,7 @@ ARG APP_JAR
 
 WORKDIR /home/app/
 
-RUN mkdir -p /var/log/admin/
+RUN mkdir -p /var/log/admin/ && touch /var/log/admin/admin.log
 
 COPY $APP_JAR AppAdmin.jar
 
