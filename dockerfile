@@ -32,5 +32,6 @@ EXPOSE 9999
 
 #CMD ["nohup java -jar AppAdmin.jar > admin.log 2>&1 &"]
 RUN "echo `which nohup`"
-RUN "echo $PATH"
-RUN "echo `type java`"
+RUN "echo `lsb_release -a`"
+RUN "echo `cat /etc/redhat-release`"
+RUN "echo `cat /etc/os-release`"
