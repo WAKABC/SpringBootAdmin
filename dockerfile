@@ -8,7 +8,7 @@ WORKDIR /home/app/
 
 RUN mkdir -p /var/log/admin/
 
-COPY /var/jenkins_home/workspace/spring-boot-admin/target/AppAdmin-2.7.17.jar /home/app/
+COPY /target/AppAdmin-2.7.17.jar /home/app/
 
 EXPOSE 9999
 
