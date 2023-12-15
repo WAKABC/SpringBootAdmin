@@ -6,7 +6,9 @@ USER root
 
 WORKDIR /home/app/
 
-RUN mkdir logs && chomod -R 777 /home/app
+RUN mkdir /home/app/logs
+
+RUN chomod -R 777 /home/app
 
 VOLUME /home/app
 
