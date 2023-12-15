@@ -31,6 +31,6 @@ COPY $APP_JAR AppAdmin.jar
 EXPOSE 9999
 
 #CMD ["nohup java -jar AppAdmin.jar > admin.log 2>&1 &"]
-RUN "echo `type nohup`"
+RUN "echo `which nohup`"
 RUN "echo $PATH"
 RUN "echo `type java`"
