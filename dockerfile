@@ -24,11 +24,10 @@ ARG APP_JAR
 
 WORKDIR /home/app/
 
-#RUN mkdir -p /var/log/admin/ && touch /var/log/admin/admin.log
+#RUN mkdir -p /var/log/admin/
 
 COPY $APP_JAR AppAdmin.jar
 
 EXPOSE 9999
 
-#CMD ["nohup java -jar AppAdmin.jar > admin.log 2>&1 &"]
-RUN "lsb_release -a || cat /etc/redhat-release || cat /etc/os-release"
+CMD "nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &"
