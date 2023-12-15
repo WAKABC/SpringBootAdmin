@@ -6,12 +6,12 @@ USER root
 
 WORKDIR /home/app/
 
-RUN mkdir -p /var/log/admin/
+RUN mkdir logs && chomod -R 777 /home/app
 
-VOLUME /var/log/admin/
+VOLUME /home/app
 
 COPY target/AppAdmin-2.7.17.jar /home/app/
 
 EXPOSE 9999
 
-CMD nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &
+CMD nohup java -jar AppAdmin.jar > logs/admin.log 2>&1 &
