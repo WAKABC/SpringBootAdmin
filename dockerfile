@@ -11,5 +11,5 @@ RUN mkdir -p /var/log/admin/
 COPY $APP_JAR AppAdmin.jar
 
 EXPOSE 9999
-
-CMD "nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &"
+#nohup java -jar AppAdmin.jar > /var/log/admin/admin.log 2>&1 &
+CMD "java -jar AppAdmin.jar"
