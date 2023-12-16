@@ -1,17 +1,13 @@
-FROM adoptopenjdk/openjdk8
+FROM adoptopenjdk/openjdk8:latest
 
-USER root
-
-#ARG APP_JAR
+ARG APP_JAR=some_default_value.jar
 
 WORKDIR /home/app/
 
-VOLUME /home/app
+COPY target/AppAdmin-2.7.17.jar app.jar
 
-COPY target/AppAdmin-2.7.17.jar /home/app/app.jar
-
-RUN mkdir /home/app/logs && chmod -R 777 /home/app
+RUN mkdir logs && chmod -R 777 logs
 
 EXPOSE 9999
 
-CMD ["nohup", "java", "-jar", "app.jar", "> logs/admin.log 2>&1 &"]
+CMD ["java", "-jar", "app.jar", "> logs/admin.log 2>&1"]
