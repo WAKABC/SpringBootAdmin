@@ -10,8 +10,8 @@ RUN mkdir /home/app/logs && chmod -R 777 /home/app
 
 VOLUME /home/app
 
-COPY target/AppAdmin-2.7.17.jar /home/app/
+COPY target/AppAdmin-2.7.17.jar /home/app/app.jar
 
 EXPOSE 9999
 
-CMD nohup java -jar AppAdmin.jar > logs/admin.log 2>&1 &
+CMD nohup java -jar app.jar>logs/admin.log 2>&1 &
