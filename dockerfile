@@ -14,4 +14,4 @@ RUN mkdir /home/app/logs && chmod -R 777 /home/app
 
 EXPOSE 9999
 
-CMD nohup java -jar app.jar > logs/admin.log 2>&1 &
+CMD ["nohup", "java", "-jar", "app.jar", "> logs/admin.log 2>&1 &""]
