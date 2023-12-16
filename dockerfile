@@ -10,4 +10,4 @@ RUN mkdir logs && chmod -R 777 logs
 
 EXPOSE 9999
 
-ENTERYPOINT ["java", "-jar", "app.jar", "> logs/admin.log 2>&1"]
+ENTRYPOINT ["java", "-jar", "app.jar", "> logs/admin.log 2>&1"]
